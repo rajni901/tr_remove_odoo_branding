@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Remove "Powered by Odoo" from website footer copyright area via CSS
+         The website footer is editable by users so we use CSS to hide it reliably -->
+    <template id="remove_website_powered_by"
+              inherit_id="website.layout"
+              name="Remove Powered by Odoo - Website Footer">
+        <xpath expr="//head" position="inside">
+            <style>
+                /* Hide Powered by Odoo in website footer */
+                .o_footer_copyright a[href*="odoo.com"],
+                .o_footer_copyright a[href*="odoo.com"] img,
+                a[href*="odoo.com"][href*="utm_source"] {
+                    display: none !important;
+                }
+            </style>
+        </xpath>
+    </template>
+
+</odoo>

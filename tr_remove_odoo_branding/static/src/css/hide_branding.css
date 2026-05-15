@@ -1,0 +1,19 @@
+/* ── Remove Powered by Odoo — Technical Rajni ── */
+
+/* Website footer & portal */
+a[href*="odoo.com"][href*="utm_source"],
+a[href*="odoo.com"][href*="utm_source"] img,
+.o_footer_copyright a[href*="odoo.com"] {
+    display: none !important;
+}
+
+/* Login page "Powered by Odoo" */
+.o_login_aside a[href*="odoo.com"],
+.o_auth_footer a[href*="odoo.com"] {
+    display: none !important;
+}
+
+/* Portal sidebar */
+.d-lg-block.small.text-center.text-muted {
+    display: none !important;
+}

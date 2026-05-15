@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Remove "Powered by Odoo" from main email notification layout -->
+    <template id="remove_email_powered_by"
+              inherit_id="mail.mail_notification_layout"
+              name="Remove Powered by Odoo - Email Layout">
+        <xpath expr="//div[@t-if='show_footer']" position="replace"/>
+    </template>
+
+    <!-- Remove "Powered by Odoo" from light email notification layout -->
+    <template id="remove_email_light_powered_by"
+              inherit_id="mail.mail_notification_light"
+              name="Remove Powered by Odoo - Email Light Layout">
+        <xpath expr="//tr[td[@id='mail_unfollow' or contains(., 'Powered by')]][last()]" position="replace"/>
+    </template>
+
+</odoo>

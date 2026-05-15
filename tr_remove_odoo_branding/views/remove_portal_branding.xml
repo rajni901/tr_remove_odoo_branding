@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Remove "Powered by Odoo" from Portal sidebar -->
+    <template id="remove_portal_powered_by"
+              inherit_id="portal.portal_record_sidebar"
+              name="Remove Powered by Odoo - Portal">
+        <xpath expr="//div[hasclass('d-none')][hasclass('d-lg-block')]" position="replace"/>
+    </template>
+
+</odoo>
