@@ -37,6 +37,6 @@ Configure your own brand name and URL from Settings.
     'installable': True,
     'application': False,
     'auto_install': False,
-    'price': 9.99,
+    'price': 5.00,
     'currency': 'USD',
 }
