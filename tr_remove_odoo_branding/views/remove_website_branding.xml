@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Remove "Powered by Odoo" from website footer copyright area via CSS
-         The website footer is editable by users so we use CSS to hide it reliably -->
+    <!-- Replace "Powered by Odoo" in website footer -->
     <template id="remove_website_powered_by"
               inherit_id="website.layout"
               name="Remove Powered by Odoo - Website Footer">
         <xpath expr="//head" position="inside">
             <style>
-                /* Hide Powered by Odoo in website footer */
                 .o_footer_copyright a[href*="odoo.com"],
-                .o_footer_copyright a[href*="odoo.com"] img,
-                a[href*="odoo.com"][href*="utm_source"] {
+                .o_footer_copyright a[href*="odoo.com"] img {
                     display: none !important;
                 }
             </style>
+        </xpath>
+    </template>
+
+    <!-- Replace "Powered by Odoo" on Login page -->
+    <template id="remove_login_powered_by"
+              inherit_id="web.login_layout"
+              name="Remove Powered by Odoo - Login Page">
+        <xpath expr="//a[@href[contains(.,'odoo.com')]]" position="replace">
+            <t t-set="company" t-value="request.env.company"/>
+            <t t-if="company.custom_powered_by_name">
+                <a t-att-href="company.custom_powered_by_url or '#'"
+                   target="_blank" style="color: #6c3fc5; text-decoration: none;">
+                    Powered by <strong t-esc="company.custom_powered_by_name"/>
+                </a>
+            </t>
         </xpath>
     </template>
 

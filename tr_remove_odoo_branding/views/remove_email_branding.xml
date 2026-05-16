@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Remove "Powered by Odoo" from main email notification layout -->
+    <!-- Replace "Odoo" link inside email footer — keeps "Powered by" text, replaces the link -->
     <template id="remove_email_powered_by"
               inherit_id="mail.mail_notification_layout"
               name="Remove Powered by Odoo - Email Layout">
-        <xpath expr="//div[@t-if='show_footer']" position="replace"/>
-    </template>
-
-    <!-- Remove "Powered by Odoo" from light email notification layout -->
-    <template id="remove_email_light_powered_by"
-              inherit_id="mail.mail_notification_light"
-              name="Remove Powered by Odoo - Email Light Layout">
-        <xpath expr="//tr[td[@id='mail_unfollow' or contains(., 'Powered by')]][last()]" position="replace"/>
+        <xpath expr="//div[@t-if='show_footer']/a[@href[contains(.,'odoo.com')]]" position="replace">
+            <t t-if="company.custom_powered_by_name">
+                <a t-att-href="company.custom_powered_by_url or '#'"
+                   t-att-style="'color: ' + (company.email_secondary_color or '#6c3fc5') + ';'"
+                   target="_blank">
+                    <t t-esc="company.custom_powered_by_name"/>
+                </a>
+            </t>
+        </xpath>
     </template>
 
 </odoo>

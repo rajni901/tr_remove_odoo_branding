@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Remove "Powered by Odoo" from Portal sidebar -->
+    <!-- Replace "Powered by Odoo" in Portal sidebar -->
     <template id="remove_portal_powered_by"
               inherit_id="portal.portal_record_sidebar"
               name="Remove Powered by Odoo - Portal">
-        <xpath expr="//div[hasclass('d-none')][hasclass('d-lg-block')]" position="replace"/>
+        <xpath expr="//div[hasclass('d-none')][hasclass('d-lg-block')]" position="replace">
+            <t t-set="company" t-value="request.env.company"/>
+            <t t-if="company.custom_powered_by_name">
+                <div class="d-none d-lg-block mt-5 small text-center text-muted">
+                    Powered by
+                    <a t-att-href="company.custom_powered_by_url or '#'"
+                       target="_blank" style="color: #6c3fc5; text-decoration: none;">
+                        <strong t-esc="company.custom_powered_by_name"/>
+                    </a>
+                </div>
+            </t>
+        </xpath>
     </template>
 
 </odoo>

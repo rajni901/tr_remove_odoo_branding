@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_branding" model="ir.ui.view">
+        <field name="name">res.config.settings.branding</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <form position="inside">
+                <app data-string="Branding" string="Branding" name="tr_remove_odoo_branding">
+                    <block title="Custom Powered By" id="custom_branding_block">
+                        <setting string="Brand Name" help="Shown instead of 'Powered by Odoo'. Leave empty to hide completely.">
+                            <field name="custom_powered_by_name" placeholder="e.g. Technical Rajni"/>
+                        </setting>
+                        <setting string="Brand URL" help="URL for the Powered By link.">
+                            <field name="custom_powered_by_url" placeholder="e.g. https://www.technicalrajni.com"/>
+                        </setting>
+                    </block>
+                </app>
+            </form>
+        </field>
+    </record>
+
+</odoo>
