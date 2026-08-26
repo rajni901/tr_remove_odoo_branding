@@ -4,7 +4,7 @@
     'category': 'Website',
     'summary': 'Remove & Replace Powered by Odoo from Website, Portal and Email Templates',
     'description': """
-Remove Powered by Odoo — by Technical Rajni
+Remove Powered by Odoo — by Vayu Sharma
 ============================================
 Hides or replaces all "Powered by Odoo" branding from:
 
@@ -15,8 +15,8 @@ Hides or replaces all "Powered by Odoo" branding from:
 
 Configure your own brand name and URL from Settings.
     """,
-    'author': 'Technical Rajni',
-    'website': 'https://www.technicalrajni.com',
+    'author': 'Vayu Sharma',
+    'website': '',
     'license': 'OPL-1',
     'depends': ['portal', 'mail', 'website', 'base_setup'],
     'data': [

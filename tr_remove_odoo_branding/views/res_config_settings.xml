@@ -10,10 +10,10 @@
                 <app data-string="Branding" string="Branding" name="tr_remove_odoo_branding">
                     <block title="Custom Powered By" id="custom_branding_block">
                         <setting string="Brand Name" help="Shown instead of 'Powered by Odoo'. Leave empty to hide completely.">
-                            <field name="custom_powered_by_name" placeholder="e.g. Technical Rajni"/>
+                            <field name="custom_powered_by_name" placeholder="e.g. Vayu Sharma"/>
                         </setting>
                         <setting string="Brand URL" help="URL for the Powered By link.">
-                            <field name="custom_powered_by_url" placeholder="e.g. https://www.technicalrajni.com"/>
+                            <field name="custom_powered_by_url" placeholder="e.g. "/>
                         </setting>
                     </block>
                 </app>
